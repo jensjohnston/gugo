@@ -1,0 +1,60 @@
+/* we declare our variable inside a :root selector */
+:root {
+  /* give the variable a name and value (needs two -- in front) */
+  --yellow: #FFC920;
+  --breakpoint-1: 840px;
+  --medium-font: font-family: sofia-pro, sans-serif;
+}
+
+body {
+  font-family: sofia-pro, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #414141; 
+}
+
+a {
+  text-decoration: none;
+  color: #414141;
+}
+
+
+
+  @media (min-width: 30em) {
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+  }
+
+
+  @media (max-width: 30em) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+  }
+
+
+
+
+section div.split {
+  position: relative;
+}
+
+
+
+.button {
+  display: inline-block;
+  background-color: var(--yellow);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: none;
+  padding: 16px 72px;
+  border-radius: 100px;
+}
