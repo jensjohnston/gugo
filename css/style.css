@@ -51,7 +51,7 @@ section div.split {
 .button {
   display: inline-block;
   background-color: var(--yellow);
-  color: #fff;
+  color: #414141;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border: none;
@@ -59,4 +59,9 @@ section div.split {
   border-radius: 100px;
   width: fit-content;
 }
+
+/*
+.image {
+  width: fit-content;
+}*/
 
