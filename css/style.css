@@ -2,6 +2,8 @@
 :root {
   /* give the variable a name and value (needs two -- in front) */
   --yellow: #FFC920;
+  --blue: #7DC0E9;
+  --green: #00A67E;
   --breakpoint-1: 840px;
   --medium-font: font-family: sofia-pro, sans-serif;
 }
@@ -46,11 +48,6 @@ p {
 
 
 
-section div.split {
-  position: relative;
-}
-
-
 
 .button {
   display: inline-block;
@@ -85,4 +82,16 @@ transition: transform 0.5s;
 @keyframes fadein {
   0% { opacity: 0; }
   100% { opacity: 1; }
+}
+
+
+.full-width-blue {
+  width: 100vw !important;
+  background-color: var(--blue);
+}
+
+
+.full-width-green {
+  width: 100vw !important;
+  background-color: var(--green);
 }
