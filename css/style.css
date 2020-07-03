@@ -7,10 +7,10 @@
 }
 
 body {
-  font-family: sofia-pro, sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #414141; 
+  color: #1b1b1b; 
 }
 
 a {
@@ -18,10 +18,14 @@ a {
   color: #414141;
 }
 
+p {
+  margin: 0;
+}
 
 
   @media (min-width: 30em) {
     .container {
+      max-width: 1152px;
       margin-left: auto;
       margin-right: auto;
       padding-left: 4rem;
@@ -58,10 +62,27 @@ section div.split {
   padding: 16px 72px;
   border-radius: 100px;
   width: fit-content;
+text-decoration: none;
+transition: transform 0.5s;
 }
 
-/*
-.image {
-  width: fit-content;
-}*/
 
+.button:hover {
+  transform: translateY(-4px);
+  }
+
+
+.image-svg {
+  transition: transform 0.5s;
+}
+
+
+.image-svg:hover {
+  transform: translateY(-4px);
+}
+
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
