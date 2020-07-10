@@ -57,9 +57,15 @@ p {
   }
 
   @media (max-width: 30em) {
-    .container {
+    .container, .container-small {
       padding-left: 2rem;
       padding-right: 2rem;
+    }
+
+
+    .hero-text {
+      font-size: 32px;
+      font-weight: 700;
     }
 
   }
@@ -160,19 +166,26 @@ header {
   width: 100px; 
 }
 
-.scroll-to {
-  position: absolute;
-  left: 50%;
-  bottom: 3vh;
-  width: 64px;
-  height: 32px;
-  background-image: url(/images/arrow-down.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  transform: translateX(-50%);
-}
 
-.scroll-to-intro {
-  background-image: url(/images/down-arrow.svg);
+
+@media (min-width: 30em) {
+  
+  .scroll-to {
+    position: absolute;
+    left: 50%;
+    bottom: 3vh;
+    width: 64px;
+    height: 32px;
+    background-image: url(/images/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translateX(-50%);
+  }
+  
+  .scroll-to-intro {
+    background-image: url(/images/down-arrow.svg);
+  }
+  
+
 }
