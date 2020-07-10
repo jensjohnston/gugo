@@ -6,6 +6,14 @@
   --green: #00A67E;
   --breakpoint-1: 840px;
   --medium-font: font-family: sofia-pro, sans-serif;
+
+  --angle: 8px;
+  --angle-o: 4px;
+}
+
+/*COLORS*/
+.yellow-text {
+ color: var(--yellow);
 }
 
 body {
@@ -27,7 +35,7 @@ p {
 
   @media (min-width: 30em) {
     .container {
-      max-width: 1152px;
+      max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
       padding-left: 4rem;
@@ -36,6 +44,17 @@ p {
 
   }
 
+
+  @media (min-width: 30em) {
+    .container-big {
+      max-width: 2000px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+
+  }
 
   @media (max-width: 30em) {
     .container {
@@ -49,24 +68,43 @@ p {
 
 
 
+
 .button {
   display: inline-block;
   background-color: var(--yellow);
   color: #414141;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: none;
+  border: 2px solid black;
   padding: 16px 72px;
   border-radius: 100px;
   width: fit-content;
 text-decoration: none;
 transition: transform 0.5s;
+box-shadow: 4px 8px #000;
+}
+
+.button-outline {
+  display: inline-block;
+  border: 2px solid BLACK;
+  color: black  ;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; 
+  padding: 8px 72px;
+  border-radius: 100px;
+  width: fit-content;
+text-decoration: none;
+transition: box-shadow 0.5s;
+box-shadow: 4px 8px #000;
 }
 
 
-.button:hover {
-  transform: translateY(-4px);
+
+.button:hover, .button-outline:hover {
+  box-shadow: translate(-4px);
   }
+
+
 
 
 .image-svg {
@@ -79,19 +117,62 @@ transition: transform 0.5s;
 }
 
 
-@keyframes fadein {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
 
 
-.full-width-blue {
+.full-width-hero {
   width: 100vw !important;
-  background-color: var(--blue);
+  /* background-color: var(--blue); */
 }
 
 
 .full-width-green {
   width: 100vw !important;
   background-color: var(--green);
+}
+
+
+.hyphens { hyphens: auto;}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 64px 64px;
+}
+
+
+
+@media (max-width: 30em) {
+  header {
+   display:none;
+  }
+
+}
+
+.logo {
+  width: 100px; 
+}
+
+.scroll-to {
+  position: absolute;
+  left: 50%;
+  bottom: 3vh;
+  width: 64px;
+  height: 32px;
+  background-image: url(/images/arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transform: translateX(-50%);
+}
+
+.scroll-to-intro {
+  background-image: url(/images/down-arrow.svg);
 }
