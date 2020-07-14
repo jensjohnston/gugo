@@ -1,4 +1,17 @@
 
+/* @font-face {
+  font-family: 'Pressura';
+  src: url("../fonts/gt-pressura-regular.ttf") format("opentype");
+  src: url("../fonts/gt-pressura-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  src: url("../fonts/Ferry-Black.eot");
+  src: url("../fonts/Ferry-Black.eot?") format("embedded-opentype"), url("../fonts/Ferry-Black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Ferry Black'; } */
+
 
 .regular {
   font-family: sofia-pro, sans-serif;
@@ -31,23 +44,10 @@ h1{
   font-size: 4em;
 }
 
-.f1-ns {
-  font-weight: 700;
-}
-
-.f-subheadline-ns {
-  font-weight: 700;
-}
 
 
-.f2 {
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.f4 {
-  font-weight: 700;
-}
-
-
-
+ @media (min-width: 30em) {
+  .h3-ns{
+    font-size: 64px;
+  }
+} 

@@ -4,6 +4,7 @@
   --yellow: #FFC920;
   --blue: #7DC0E9;
   --green: #00A67E;
+  --red: #e76b6c;
   --breakpoint-1: 840px;
   --medium-font: font-family: sofia-pro, sans-serif;
 
@@ -15,6 +16,29 @@
 .yellow-text {
  color: var(--yellow);
 }
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+.bg-red {
+  background-color: var(--red);
+}
+
+
+@keyframes fadein {
+0% {opacity: 0;}
+100% { opacity: 1;}
+}
+
 
 body {
   font-family: proxima-nova, sans-serif;
@@ -54,6 +78,10 @@ p {
       padding-right: 4rem;
     }
 
+    .lh-110 {
+      line-height: 1.1;
+    }
+
   }
 
   @media (max-width: 30em) {
@@ -67,6 +95,8 @@ p {
       font-size: 32px;
       font-weight: 700;
     }
+
+  
 
   }
 
@@ -123,6 +153,10 @@ box-shadow: 4px 8px #000;
 }
 
 
+.image-svg:before {
+  transform: scale(0.2)
+}
+
 
 
 .full-width-hero {
@@ -174,8 +208,8 @@ header {
     position: absolute;
     left: 50%;
     bottom: 3vh;
-    width: 64px;
-    height: 32px;
+    width: 48px;
+    height: 24px;
     background-image: url(/images/arrow-down.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -188,4 +222,130 @@ header {
   }
   
 
+}
+
+div.image-up {
+  overflow: hidden;
+}
+
+div.image-up img {
+  transform: translate(0, 120%);
+  transition: transform 1s 0.25s;
+}
+
+div.image-up.in-view img {
+  transform: translate(0, 0);
+}
+
+
+
+
+
+/*Footer
+
+@media (min-width: 1040px)
+.footer {
+    padding-bottom: 88px;
+    padding-top: 88px;
+}
+@media (min-width: 840px)
+.footer {
+    padding-bottom: 64px;
+    padding-top: 64px;
+}
+@media (min-width: 640px)
+.footer {
+    padding-bottom: 48px;
+    padding-top: 48px;
+}
+.footer {
+    padding-bottom: 32px;
+    padding-top: 32px;
+    background: #f7f7f7;
+}
+article, aside, footer, header, nav, section {
+    display: block;
+}
+
+*/
+
+
+.block {
+  display:block;
+}
+
+span {
+  hyphens: auto;
+}
+
+
+.skew-image {
+  transition: transform 0.25s;
+  will-change: transform;
+}
+
+section.full-width {
+  width: 100%;
+}
+
+
+
+.wave svg {
+  width: 100%;
+  height: 40px;
+  padding-bottom: 60px;
+}
+
+.wave path {
+  stroke: #ffffff;
+  stroke-width: 5px;
+  stroke-linecap: round;
+  fill: none;
+}
+
+
+
+.headline-dark {
+  -webkit-text-stroke: 1px black;
+  color: transparent;
+}
+
+.headline-light {
+  -webkit-text-stroke: 1px white;
+  color: transparent;
+}
+
+.sticky {
+  top: 0;
+  position: sticky;
+}
+
+
+/*KUNDER*/
+
+
+.image-kund {
+  transition: transform 0.5s;
+}
+
+
+.image-kund:hover {
+  transform: scale(0.9);
+}
+
+
+.text-kund {
+  transform: translateY(-40px);
+}
+
+
+div.fade-bg {
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  z-index: -1;
+  opacity: 0;
 }
