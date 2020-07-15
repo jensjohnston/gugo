@@ -84,7 +84,7 @@ function animate() {
     return p[0] + "," + p[1]
   }).join(" L")
 
-  document.querySelector("path").setAttribute("d", path)
+  document.querySelector("path.wavez").setAttribute("d", path)
 
   t += 0.5
 
@@ -118,3 +118,38 @@ const looper = function () {
  }
 
 looper()
+
+
+
+
+
+
+const sections = document.querySelectorAll("section")
+const wavesBoxes = document.querySelectorAll("g.wave")
+
+const checkCircles = function () {  
+  sections.forEach((section, index) => {
+   	const waves = wavesBoxes[index].querySelectorAll("circle, path")
+    
+    if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
+      waves.forEach(wave => {
+        wave.classList.add("in-view")
+      })
+    } else {
+      waves.forEach(wave => {
+        wave.classList.remove("in-view")
+      })	  	
+    }
+  })
+}
+
+sections.forEach(section => {
+  section.style.backgroundColor = "transparent"
+  section.style.color = "#000000"
+})
+
+checkCircles()
+
+window.addEventListener("scroll", function () {
+  checkCircles()
+})
