@@ -113,13 +113,15 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   border: 2px solid black;
-  padding: 16px 72px;
+  padding: 8px 72px;
   border-radius: 100px;
   width: fit-content;
 text-decoration: none;
 transition: transform 0.5s;
-box-shadow: 4px 8px #000;
+/* box-shadow: 4px 8px #000; */
 }
+
+
 
 .button-outline {
   display: inline-block;
@@ -138,7 +140,7 @@ box-shadow: 4px 8px #000;
 
 
 .button:hover, .button-outline:hover {
-  box-shadow: translate(-4px);
+  background-color: #FFE185;
   }
 
 
@@ -192,9 +194,17 @@ header {
 
 @media (max-width: 30em) {
   header {
-   display:none;
+    padding: 16px;
+    background-color: white;
   }
 
+  .button {
+    padding: 8px 48px;
+  }
+
+  .section-hero {
+    margin-top: 76px;
+  }
 }
 
 .logo {
@@ -294,20 +304,32 @@ section.full-width {
 
 
 
-/* .wave svg {
-  width: 100%;
-  height: 40px;
-  padding-bottom: 60px;
+ svg.wavy {
+  width: 20vw;
+  height: 50px;
 }
 
-.wave path {
-  stroke: #ffffff;
-  stroke-width: 0px;
+.wavez {
+  stroke: #000000;
+  stroke-width: 5px;
   stroke-linecap: round;
   fill: none;
-} */
+} 
 
 
+@media (max-width: 30em) {
+  svg.wavy {
+    width: 200px;
+    height: 50px;
+  }
+  
+  .wavez {
+    stroke: #000000;
+    stroke-width: 5px;
+    stroke-linecap: round;
+    fill: none;
+  } 
+}
 
 .headline-dark {
   -webkit-text-stroke: 1px black;
@@ -354,7 +376,6 @@ svg.blob {
   position: fixed;
   top:0;
   left: 0;
-  border: 1px solid black;
   width: 100%;
   height: 100vh;
   z-index: 0;
@@ -362,7 +383,7 @@ svg.blob {
 }
 
 
-path {
+g.blob path {
   transition: fill 0.5s;
   transform: scale(0.03);
   transition: transform 1s;

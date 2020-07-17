@@ -64,35 +64,36 @@ const imageHolders = document.querySelectorAll("div.image-up")
 
 
 
-// let xs = []
-// for (var i = 0; i <= 500; i++) {
-//   xs.push(i)
-// }
+   // wave ====
 
-// let t = 0
+let xs = []
+for (var i = 0; i <= 500; i++) {
+  xs.push(i)
+}
 
-// function animate() {
+let t = 0
 
-//   let points = xs.map(x => {
+function animate() {
 
-//     let y = 25 + 10 * Math.sin((x + t) / 10)
+  let points = xs.map(x => {
 
-//     return [x, y]
-//   })
+    let y = 25 + 10 * Math.sin((x + t) / 10)
 
-//   let path = "M" + points.map(p => {
-//     return p[0] + "," + p[1]
-//   }).join(" L")
+    return [x, y]
+  })
 
-//   document.querySelector("path.wavez").setAttribute("d", path)
+  let path = "M" + points.map(p => {
+    return p[0] + "," + p[1]
+  }).join(" L")
 
-//   t += 0.5
+  document.querySelector(".wavez").setAttribute("d", path)
 
-//   requestAnimationFrame(animate)
-// }
+  t += 0.5
 
-// animate()
+  requestAnimationFrame(animate)
+}
 
+animate()
 
 
 
