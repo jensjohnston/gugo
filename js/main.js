@@ -99,26 +99,26 @@ animate()
 
 
 //Implement Skew feeling
-const section = document.querySelector(".skew-image")
+// const section = document.querySelector(".skew-image")
 
-let currentPixel = window.pageYOffset
+// let currentPixel = window.pageYOffset
 
-const looper = function () {
-  const newPixel = window.pageYOffset 
-  const diff = newPixel - currentPixel
-   const top = 5
-   const intensity = 1.5
-  const speed = top * ((2 / (1 + Math.exp(-1 * intensity * diff))) -  1)
+// const looper = function () {
+//   const newPixel = window.pageYOffset 
+//   const diff = newPixel - currentPixel
+//    const top = 5
+//    const intensity = 1.5
+//   const speed = top * ((2 / (1 + Math.exp(-1 * intensity * diff))) -  1)
   
-  section.style.transform = "skewY(" + speed + "deg)"
+//   section.style.transform = "skewY(" + speed + "deg)"
 
-  currentPixel = newPixel
+//   currentPixel = newPixel
 
 
-  requestAnimationFrame(looper)
- }
+//   requestAnimationFrame(looper)
+//  }
 
-looper()
+// looper()
 
 
 /*Blobs*/
