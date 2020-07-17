@@ -64,34 +64,34 @@ const imageHolders = document.querySelectorAll("div.image-up")
 
 
 
-let xs = []
-for (var i = 0; i <= 500; i++) {
-  xs.push(i)
-}
+// let xs = []
+// for (var i = 0; i <= 500; i++) {
+//   xs.push(i)
+// }
 
-let t = 0
+// let t = 0
 
-function animate() {
+// function animate() {
 
-  let points = xs.map(x => {
+//   let points = xs.map(x => {
 
-    let y = 25 + 10 * Math.sin((x + t) / 10)
+//     let y = 25 + 10 * Math.sin((x + t) / 10)
 
-    return [x, y]
-  })
+//     return [x, y]
+//   })
 
-  let path = "M" + points.map(p => {
-    return p[0] + "," + p[1]
-  }).join(" L")
+//   let path = "M" + points.map(p => {
+//     return p[0] + "," + p[1]
+//   }).join(" L")
 
-  document.querySelector("path.wavez").setAttribute("d", path)
+//   document.querySelector("path.wavez").setAttribute("d", path)
 
-  t += 0.5
+//   t += 0.5
 
-  requestAnimationFrame(animate)
-}
+//   requestAnimationFrame(animate)
+// }
 
-animate()
+// animate()
 
 
 
@@ -120,36 +120,39 @@ const looper = function () {
 looper()
 
 
+/*Blobs*/
+
+const heroPage = document.querySelector(".hero-page")
+const blobGroups = document.querySelectorAll("g.blob")
+const sectionTags = document.querySelectorAll("section") 
 
 
+const easing = function (x) {
+  return  x * x * x
+}
 
+const fadeHero = function () {
+  const pixels = window.pageYOffset
 
-const sections = document.querySelectorAll("section")
-const wavesBoxes = document.querySelectorAll("g.wave")
+  heroPage.style.opacity = 1 - easing(pixels / 400)
+}
 
-const checkCircles = function () {  
-  sections.forEach((section, index) => {
-   	const waves = wavesBoxes[index].querySelectorAll("circle, path")
-    
-    if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
-      waves.forEach(wave => {
-        wave.classList.add("in-view")
-      })
+checkBlobs = function () {
+  
+  const pixels = window.pageYOffset
+
+  blobGroups.forEach((blob, index) => {
+    const currentSection = sectionTags[index]
+
+    if (pixels > currentSection.offsetTop +200) {
+      blob.classList.add("in-view")
     } else {
-      waves.forEach(wave => {
-        wave.classList.remove("in-view")
-      })	  	
+      blob.classList.remove("in-view")
     }
   })
 }
 
-sections.forEach(section => {
-  section.style.backgroundColor = "transparent"
-  section.style.color = "#000000"
-})
-
-checkCircles()
-
 window.addEventListener("scroll", function () {
-  checkCircles()
+  fadeHero ()
+  checkBlobs()
 })
