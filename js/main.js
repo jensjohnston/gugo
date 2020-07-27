@@ -98,27 +98,6 @@ animate()
 
 
 
-//Implement Skew feeling
-// const section = document.querySelector(".skew-image")
-
-// let currentPixel = window.pageYOffset
-
-// const looper = function () {
-//   const newPixel = window.pageYOffset 
-//   const diff = newPixel - currentPixel
-//    const top = 5
-//    const intensity = 1.5
-//   const speed = top * ((2 / (1 + Math.exp(-1 * intensity * diff))) -  1)
-  
-//   section.style.transform = "skewY(" + speed + "deg)"
-
-//   currentPixel = newPixel
-
-
-//   requestAnimationFrame(looper)
-//  }
-
-// looper()
 
 
 /*Blobs*/
@@ -126,6 +105,7 @@ animate()
 const heroPage = document.querySelector(".hero-page")
 const blobGroups = document.querySelectorAll("g.blob")
 const sectionTags = document.querySelectorAll("section") 
+const imageArrow = document.querySelector('.scroll-to')
 
 
 const easing = function (x) {
@@ -136,6 +116,12 @@ const fadeHero = function () {
   const pixels = window.pageYOffset
 
   heroPage.style.opacity = 1 - easing(pixels / 400)
+}
+
+const fadeArrow = function () {
+  const pixels = window.pageYOffset
+
+  imageArrow.style.opacity = 1 - easing(pixels / 100)
 }
 
 checkBlobs = function () {
